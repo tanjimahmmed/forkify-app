@@ -16,6 +16,8 @@ class RecipeView {
         this.#parentElement.innerHTML = '';
     }
 
+    
+
     renderSpinner = function() {
         const markup = `
             <div class="spinner">
@@ -26,6 +28,10 @@ class RecipeView {
         `;
         this.#parentElement.innerHTML = '';
         this.#parentElement.insertAdjacentHTML('afterbegin', markup)
+    }
+
+    addHandlerRender(handler) {
+      ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
     }
 
     #generateMarkup() {
