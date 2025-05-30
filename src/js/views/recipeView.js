@@ -17,15 +17,15 @@ class RecipeView {
     }
 
     renderSpinner = function() {
-    const markup = `
-        <div class="spinner">
-        <svg>
-            <use href="${icons}#icon-loader"></use>
-        </svg>
-        </div>
-    `;
-    this.#parentElement.innerHTML = '';
-    this.#parentElement.insertAdjacentHTML('afterbegin', markup)
+        const markup = `
+            <div class="spinner">
+            <svg>
+                <use href="${icons}#icon-loader"></use>
+            </svg>
+            </div>
+        `;
+        this.#parentElement.innerHTML = '';
+        this.#parentElement.insertAdjacentHTML('afterbegin', markup)
     }
 
     #generateMarkup() {
@@ -112,16 +112,16 @@ class RecipeView {
     #generateMarkupIngredient(ing) {
         return `
             <li class="recipe__ingredient">
-            <svg class="recipe__icon">
-                <use href="${icons}#icon-check"></use>
-            </svg>
-            <div class="recipe__quantity">${ing.quantity ? fracty(ing.quantity).toString() : ''}</div>
-            <div class="recipe__description">
-                <span class="recipe__unit">${ing.unit}</span>
-                ${ing.description}
-            </div>
+                <svg class="recipe__icon">
+                    <use href="${icons}#icon-check"></use>
+                </svg>
+                <div class="recipe__quantity">${ing.quantity ? fracty(ing.quantity).toString() : ''}</div>
+                <div class="recipe__description">
+                    <span class="recipe__unit">${ing.unit}</span>
+                    ${ing.description}
+                </div>
             </li>
         `
-}
+    }
 }
 export default new RecipeView();
